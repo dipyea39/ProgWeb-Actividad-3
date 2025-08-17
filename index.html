@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDSPORTS</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+ 
+  <!-- Banner -->
+  <header class="banner">
+    <img src="imagenes/logo.jpg" alt="Logo de la tienda" class="logo">
+    <h1>¡LLEGA MÁS LEJOS CON EL MEJOR EQUIPO DEPORTIVO!</h1>
+  </header>
+ 
+  <!-- Menú -->
+  <nav class="menu">
+    <ul>
+      <li><a href="#tienda">Nuestra Tienda</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contáctenos</a></li>
+      <li><a href="#cotizacion">Cotización</a></li>
+      <li><a href="#disena-cuento">Diseña tu Cuento</a></li>
+    </ul>
+  </nav>
+ 
+  <!-- Nuestra Tienda -->
+  <section id="tienda">
+    <h2>Nuestra Tienda</h2>
+    <p>Bienvenidos a MED SPORTS, tu tienda online especializada en ropa deportiva de alta calidad. Aquí encontrarás una amplia selección de prendas cómodas, funcionales y con estilo, diseñadas para acompañarte en cada entrenamiento, carrera o rutina diaria.
+
+Nuestra colección incluye:
+
+Conjuntos deportivos para hombre y mujer
+
+Ropa de entrenamiento, yoga, running y gym
+
+Telas transpirables, elásticas y resistentes
+
+Diseños modernos y variedad de tallas
+
+Con envíos rápidos, compras seguras y atención personalizada, en [Nombre de tu tienda] hacemos que te vistas para ganar.</p>
+    <h3>Integrantes del grupo:</h3>
+    <ul>
+      <li>CRISTIAN ALEXANDER GONZÁLEZ BOTERO</li>
+      <li>ELKIN FERNANDO PARRA RENDÓN</li>
+      <li>DIANA PATRICIA YEPES ARCILA</li>
+    </ul>
+  </section>
+ 
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li><strong>Asesoría Deportiva Personalizada: </strong>Ofrecemos asesoramiento personalizado para ayudarte a elegir el equipo o indumentaria deportiva ideal según tu disciplina, nivel de experiencia y objetivos. Nuestro equipo de expertos te guiará para que compres lo que realmente necesitas.</li>
+      <li><strong>Alquiler de equipamiento deportivo:</strong>Ofrecemos la posibilidad de alquilar ciertos artículos por días o semanas, como bicicletas, equipo de camping, paddle boards, raquetas, etc.</li>
+    </ul>
+  </section>
+ 
+  <!-- Contáctenos -->
+  <section id="contacto">
+    <h2>Contáctenos</h2>
+    <p>WhatsApp: 1234567890</p>
+    <p>Teléfono: 0987654321</p>
+    <p>Dirección: Calle falsa 123</p>
+    <!-- Mapa de Google embebido -->
+    <iframe src="https://www.google.com/maps/embed?...aquí-va-tu-link..." width="400" height="300"></iframe>
+  </section>
+ 
+  <!-- Cotización -->
+  <section id="cotizacion">
+    <h2>Solicita tu Cotización</h2>
+    <form>
+      <label>Nombre:</label><br>
+      <input type="text" name="nombre"><br><br>
+ 
+      <label>Producto:</label><br>
+      <input type="text" name="producto"><br><br>
+ 
+      <label>Mensaje:</label><br>
+      <textarea name="mensaje"></textarea><br><br>
+ 
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+
+  <!-- Diseña tu Cuento -->
+  <section id="disena-cuento">
+    <h2>Diseña tu cuento</h2>
+    <form id="form-cuento">
+      <div class="form-group">
+        <label for="nombres">Nombres y apellidos:</label>
+        <input type="text" id="nombres" name="nombres" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="apodo">Apodo:</label>
+        <input type="text" id="apodo" name="apodo" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="color-cabello">Color de cabello:</label>
+        <select id="color-cabello" name="color-cabello" required>
+          <option value="negro">Negro</option>
+          <option value="castaño">Castaño</option>
+          <option value="rubio">Rubio</option>
+          <option value="otros">Otro</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="color-ojos">Color de ojos:</label>
+        <select id="color-ojos" name="color-ojos" required>
+          <option value="cafés">Cafés</option>
+          <option value="azules">Azules</option>
+          <option value="verdes">Verdes</option>
+          <option value="negros">Negros</option>
+          <option value="otros">Otro</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="1" max="120" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby" required>
+      </div>
+      
+      <button type="button" onclick="generarCuento()">Continuar</button>
+    </form>
+    
+    <div id="cuento-generado" class="cuento-resultado"></div>
+  </section>
+
+  <script>
+    function generarCuento() {
+      // Obtener los valores del formulario
+      const nombres = document.getElementById('nombres').value;
+      const apodo = document.getElementById('apodo').value;
+      const colorCabello = document.getElementById('color-cabello').value;
+      const colorOjos = document.getElementById('color-ojos').value;
+      const edad = document.getElementById('edad').value;
+      const hobby = document.getElementById('hobby').value;
+      
+      // Generar el cuento personalizado
+      const cuento = `
+        <h3>La Aventura Deportiva de ${apodo}</h3>
+        <p>Había una vez un/a joven llamado/a ${nombres}, pero todos le decían ${apodo} por su gran pasión por ${hobby}. 
+        Con sus ojos ${colorOjos} y su cabello ${colorCabello}, ${apodo} era conocido/a en todo el vecindario por su energía y espíritu deportivo.</p>
+        
+        <p>A sus ${edad} años, ${apodo} decidió participar en el gran torneo deportivo de la ciudad. 
+        Cada mañana entrenaba duramente, combinando ${hobby} con otras disciplinas para mejorar su condición física.</p>
+        
+        <p>Un día, mientras practicaba en el parque, conoció a un misterioso entrenador que le ofreció un equipo especial de MEDSPORTS. 
+        "Con esta indumentaria", dijo el entrenador, "llegarás más lejos de lo que imaginas".</p>
+        
+        <p>${apodo} aceptó el regalo y al usarlo, descubrió que tenía habilidades extraordinarias. 
+        No solo ganó el torneo, sino que inspiró a otros jóvenes a practicar deporte y llevar una vida saludable.</p>
+        
+        <p>Y así, ${apodo} demostró que con dedicación y el equipo adecuado, cualquier meta es posible.</p>
+        
+        <p><em>¡Fin de la aventura deportiva!</em></p>
+      `;
+      
+      // Mostrar el cuento generado
+      const resultado = document.getElementById('cuento-generado');
+      resultado.innerHTML = cuento;
+      resultado.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
